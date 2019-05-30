@@ -1,0 +1,15 @@
+<div>
+  <div class="rate-date">
+      <div *ngIf="period.effectiveFrom == '0000-01-01'; else notShow">
+          <mat-icon>date_range</mat-icon>
+          From Beginning
+      </div>
+        
+      <ng-template #notShow>
+          <mat-icon>date_range</mat-icon>
+          From {{ period.effectiveFrom }}
+      </ng-template>
+  </div>
+  
+  <app-period-rate [periodRate] = "period.rates"></app-period-rate>
+</div>

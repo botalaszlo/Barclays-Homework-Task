@@ -1,0 +1,42 @@
+<article>
+   <header class="header">
+      <h2>Json VATs</h2>
+      <p>
+         This is a single page app to render the vat data from the jsonvat.com website.
+      </p>
+   </header>
+  
+   <section id="vat">
+      <mat-card class="vat-card">
+         <mat-card-header>
+            <mat-card-title>Provider informations</mat-card-title>
+         </mat-card-header>
+         <mat-card-content>
+            <div>
+               <strong>Details:</strong>&nbsp;<a href="{{ vat.details }}">Project's website</a> <br />
+               <strong>Version:</strong>&nbsp; 
+               <span *ngIf="vat.version; else empty">{{ vat.version }}</span>
+               <ng-template #empty>N./A.</ng-template>
+            </div>         
+         </mat-card-content>
+      </mat-card>
+   </section>
+
+   <section id="rates">
+      <h3>VATs</h3>
+      <p>The VAT rates in %.</p>
+      <mat-form-field>
+         <mat-icon matSuffix>search</mat-icon>
+         <input type="search" matInput [(ngModel)]="searchText" placeholder="Search Country">
+      </mat-form-field>
+
+      <mat-list *ngIf="vat; else spinner">
+         <mat-list-item *ngFor="let rate of vat.rates | filterCountry: searchText">
+               <app-rate [rate] = "rate"></app-rate>
+         </mat-list-item>
+      </mat-list>
+
+      <ng-template spinner>
+            <mat-spinner></mat-spinner>
+        </ng-template>
+   </section>

@@ -1,0 +1,10 @@
+<mat-card class="rate-card">
+   <mat-card-header>
+      <mat-card-title>
+         <mat-icon class="rate-euro">euro_symbol</mat-icon>
+         {{ rate.name }}&nbsp;<small class="country-code">{{ rate.code | lowercase }}-{{ rate.countryCode}}</small></mat-card-title>
+   </mat-card-header>
+   <mat-card-content *ngFor="let period of rate.periods">
+      <app-period [period] = "period"></app-period>
+   </mat-card-content>
+</mat-card>

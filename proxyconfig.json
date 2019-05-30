@@ -1,0 +1,7 @@
+{
+    "http://jsonvat.com": {
+        "target": "http://jsonvat.com",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

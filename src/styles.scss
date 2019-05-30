@@ -1,1 +1,109 @@
 /* You can add global styles to this file, and also import other style files */
+$maxWidth: 1100px;
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@media only screen and (min-width: 1200px) {
+
+}
+
+html, body { 
+    height: 100%; 
+}
+body { 
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+#vat {
+    max-width: $maxWidth;
+    margin: auto;
+
+    mat-card {
+        background-color: #fbfbfb;
+    }
+}
+
+#rates {
+    max-width: $maxWidth;
+    margin: auto;
+    margin-top: 4em;
+    background-color: #fbfbfb;
+    box-shadow: 1px 1px 2px 0px #a8a8a8;
+    padding-top: 2em;
+
+    h3 {
+        color: #6d6b6b;
+    }
+}
+
+.header {
+    background-color: #e6e6e6;
+    padding: 2em;
+    margin-bottom: 3em;
+}
+
+app-vat {
+    .vat-card {
+        display: block;
+        position: relative;
+        text-align: left;
+        width: 100%;
+
+        mat-card-header {
+            border-bottom: 1px solid #bdbdbd;
+            margin-bottom: 1em;
+        }
+
+        mat-card-content {
+            padding-left: 1.5em;
+        }
+    }
+
+    mat-list {
+        text-align: left;
+
+        .mat-list-item {
+            height: initial !important;
+        }
+    }  
+    
+    mat-spinner {
+        margin: auto;
+    }
+}
+
+app-rate {
+    width: 100%;
+    margin: 1em;
+
+    mat-card-title {
+        border-bottom: 1px solid #e4e2e2;
+        padding-bottom: 5px;
+    }
+
+    mat-card-content {
+        padding: 0 24px;
+    }
+
+    .rate-euro {
+        position: relative;
+        left: 5px;
+        top: 5px;
+        margin-right: 5px;
+    }
+
+    .mat-card-header-text {
+        width: 100%;
+    }
+
+    .country-code {
+        position: relative;
+        float: right;
+    }
+
+    .rate-date {
+        font-size: 22px;
+        font-weight: 100;
+    }
+}
