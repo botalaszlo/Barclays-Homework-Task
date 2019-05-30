@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 export abstract class AbstractService {
 
-    constructor(protected http: HttpClient) { }
+    protected constructor(protected http: HttpClient) { }
 
     /**
      * Handle failed http operations.

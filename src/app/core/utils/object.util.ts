@@ -3,8 +3,8 @@ import { camelCase } from 'lodash';
 export class ObjectUtil {
 
     /**
-     * Camilzing the keys of the given object.
-     * In this case the snake_case keys will be transformred to camelCase.
+     * To camelize the keys of the given object.
+     * In this case the snake_case keys will be transformed to camelCase.
      * @see https://stackoverflow.com/questions/12931828/convert-returned-json-object-properties-to-lower-first-camelcase#answer-50620653
      *
      * @param obj is any kind of object
