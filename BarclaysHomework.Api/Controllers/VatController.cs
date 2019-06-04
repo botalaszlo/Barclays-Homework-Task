@@ -2,8 +2,8 @@
 using BarclaysHomework.Interfaces;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace BarclaysHomework.Controllers
 {
@@ -16,9 +16,6 @@ namespace BarclaysHomework.Controllers
 
         [HttpGet]
         [EnableCors("AllowOnlyClient")]
-        public async Task<string> Get()
-        {
-            return await _vatService.FetchVatData();
-        }
+        public async Task<JsonResult> Get() => Json(JObject.Parse(await _vatService.FetchVatData()));
     }
 }
