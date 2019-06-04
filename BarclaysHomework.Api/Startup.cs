@@ -22,8 +22,8 @@ namespace BarclaysHomework
 
             services.AddCors(options =>
             {
-                options.AddPolicy("AllowAll", builder
-                    => builder.AllowAnyOrigin()
+                options.AddPolicy("AllowOnlyClient", builder
+                    => builder.WithOrigins("http://localhost:4200")
                               .AllowAnyMethod()
                               .AllowAnyHeader()
                               .AllowCredentials()
@@ -52,7 +52,7 @@ namespace BarclaysHomework
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Barclays API V1");
             });
             app.UseSwagger();
-            app.UseCors("AllowAll");
+            app.UseCors("AllowOnlyClient");
             app.UseMvc();
         }
     }

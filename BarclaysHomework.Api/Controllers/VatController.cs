@@ -15,7 +15,7 @@ namespace BarclaysHomework.Controllers
         public Vat(IVatService vatService) => _vatService = vatService;
 
         [HttpGet]
-        [EnableCors("AllowAll")]
+        [EnableCors("AllowOnlyClient")]
         public async Task<string> Get()
         {
             return await _vatService.FetchVatData();
